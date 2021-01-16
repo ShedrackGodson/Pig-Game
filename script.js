@@ -18,20 +18,33 @@ activePlayer = 0;
 // document.querySelector("#current--" + activePlayer).textContent = dice;
 // document.querySelector(".dice").setAttribute("src", src);
 document.querySelector(".dice").style.display = "none";
+document.querySelector("#score--0").textContent = 0;
+document.querySelector("#score--1").textContent = 0;
+document.querySelector("#current--0").textContent = 0;
+document.querySelector("#current--1").textContent = 0;
 
 // rollDice Function
 function rollDice(){
+    var diceDOM = document.querySelector(".dice");
     var dice = Math.floor(Math.random() * 6) + 1;
-    document.querySelector(".dice").style.display = "block";
+    diceDOM.style.display = "block";
     var src;
     src = "dice-"+dice+".png";
-    document.querySelector(".dice").setAttribute("src", src);
+    diceDOM.setAttribute("src", src); // one way
+    // diceDOM.src = src; // Another way
     if(dice !== 1){
         roundScore += dice;
+        document.querySelector("#current--" + activePlayer).textContent = roundScore;
+        scores[activePlayer] += roundScore;
+        document.querySelector("#score--" + activePlayer).textContent = scores[activePlayer];
     } else {
-        console.log(activePlayer + " lost scores.");
+        // Next Player turn
+        activePlayer = activePlayer === 0 ? 1 : 0;
+        roundScore = 0;
+
+        document.querySelector("#current--1").textContent = 0;
+        document.querySelector("#current--0").textContent = 0;
     }
-    document.querySelector("#current--" + activePlayer).textContent = roundScore;
 }
 
 // holdScore Function

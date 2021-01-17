@@ -89,3 +89,5 @@ function newGame(){
     // Just reload the window to form a new game;
     window.location.reload();
 }
+
+// document.querySelector(".btn--new").addEventListener('click', init);

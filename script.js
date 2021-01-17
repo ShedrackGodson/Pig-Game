@@ -25,6 +25,13 @@ document.querySelector("#current--1").textContent = 0;
 document.querySelector("#winner--0").style.display = "none";
 document.querySelector("#winner--1").style.display = "none";
 
+var winningScore;
+var winningInput = document.getElementById("winning_score");
+winningInput.addEventListener("change", function(){
+    winningScore = document.getElementById("winning_score").value;
+    console.log(winningScore);
+})
+
 // rollDice Function
 function rollDice(){
     var diceDOM = document.querySelector(".dice");
@@ -54,7 +61,7 @@ function holdScore(){
     document.querySelector("#score--" + activePlayer).textContent = scores[activePlayer];
 
     // 3. Check if the player won the game
-    if(scores[activePlayer] >= 50){
+    if(scores[activePlayer] >= winningScore){
         // alert(activePlayer + 1 + " WON");
         document.querySelector("#winner--"+activePlayer).style.display = "block";
         document.querySelector(".btn--roll").disabled = true;

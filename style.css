@@ -134,8 +134,13 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
+  top: 12rem;
 }
+
+.input {
+  top: 4rem
+}
+
 .btn--roll {
   top: 39.3rem;
 }
@@ -155,7 +160,7 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
+  top: 18.5rem;
   transform: translateX(-50%);
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);

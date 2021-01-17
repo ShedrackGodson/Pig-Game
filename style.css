@@ -36,6 +36,10 @@ main {
   display: flex;
 }
 
+#winner--0, #winner--1 {
+  color: rgb(177, 137, 6);
+}
+
 .player {
   flex: 50%;
   padding: 9rem;
